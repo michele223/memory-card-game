@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="x-icon" href="card-games.png" />
+  </head>
+  <body>
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="page">
+      <h1>Welcome to the Memory Card Game</h1>
+      <label for="players">Number of Players:</label>
+      <select id="players">
+        <option value="1">1 Player</option>
+        <option value="2">2 Players</option>
+      </select>
+      <button id="start-game">Start Game</button>
+    </div>
+
+    <!-- Game Page -->
+    <div id="game-page" class="page hidden">
+      <h1>Memory Card Game</h1>
+      <div id="game-info">
+        <p>Time Left: <span id="timer">60</span>s</p>
+        <p>Player 1 Matches: <span id="player1-matches">0</span></p>
+        <p id="player2-info" class="hidden">
+          Player 2 Matches: <span id="player2-matches">0</span>
+        </p>
+        <p>Current Turn: <span id="current-player">Player 1</span></p>
+        <button id="reset-game">Reset Game</button>
+      </div>
+      <div id="game-board" class="board"></div>
+    </div>
+
+    <!-- Winning Page -->
+    <div id="win-page" class="page hidden">
+      <h1>Congratulations! You Won!</h1>
+      <p>Time Left: <span id="win-time">0</span>s</p>
+      <p>Player 1 Matches: <span id="win-player1-matches">0</span></p>
+      <p id="win-player2-info" class="hidden">
+        Player 2 Matches: <span id="win-player2-matches">0</span>
+      </p>
+      <button id="play-again-win">Play Again</button>
+    </div>
+
+    <!-- Losing Page -->
+    <div id="lose-page" class="page hidden">
+      <h1>Game Over!</h1>
+      <p>Time Left: <span id="lose-time">0</span>s</p>
+      <p>Player 1 Matches: <span id="lose-player1-matches">0</span></p>
+      <p id="lose-player2-info" class="hidden">
+        Player 2 Matches: <span id="lose-player2-matches">0</span>
+      </p>
+      <button id="play-again-lose">Play Again</button>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="flip-sound" src="flip.mp3"></audio>
+    <audio id="match-sound" src="match.mp3"></audio>
+    <audio id="incorrect-sound" src="incorrect.mp3"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
